@@ -6,4 +6,5 @@ test "should get root page" do
   assert_response :success
 end
 
+
 end
