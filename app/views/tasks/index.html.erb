@@ -1,3 +1,14 @@
 <h1>Welcome <%= current_user.name %></h1>
-<%=link_to user_sessions
+<%=link_to "Log out",  destroy_user_session_path, method: :delete%>
+<br />
 Enter your tasks for the day:
+
+<%= button_tag "Add Task", onclick: "showForm()" %>
+
+
+<div id="new-task-form">
+  <%= render 'new'  %>
+</div>
+<div id="current-tasks">
+  <%= render partial: 'show_list', locals: {tasks: @tasks} %>
+</div>

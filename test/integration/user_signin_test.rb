@@ -1,6 +1,5 @@
 require 'test_helper'
-include Capybara::DSL
-include Warden::Test::Helpers
+
 
 class UserSigninTest < ActionDispatch::IntegrationTest
 
@@ -14,5 +13,11 @@ class UserSigninTest < ActionDispatch::IntegrationTest
     click_on "Log in"
     assert_current_path tasks_path
     assert page.has_content?("Welcome Travis")
+  end
+
+  test "user can logout" do
+    visit(tasks_path)
+    click_on "Log out"
+    assert_current_path root_url
   end
 end
