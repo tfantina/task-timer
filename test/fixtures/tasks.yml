@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start: 2018-11-29 18:35:05
+  end: 2018-11-29 18:35:05
+  comments: Worked on this object.
+  user_id: 1
+
+two:
+  start: 2018-11-29 18:35:05
+  end: 2018-11-29 18:35:05
+  comments: MyText
+  user_id: 2

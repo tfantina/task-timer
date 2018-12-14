@@ -1,0 +1,6 @@
+Description
+<%= form_for(@task, method: :post, remote: true) do |f| %>
+<%= f.label :comments %>
+<%= f.text_field :comments, id: "task-comments" %>
+<%= f.submit "Insert", class: 'btn-submit' %>
+<% end %>
