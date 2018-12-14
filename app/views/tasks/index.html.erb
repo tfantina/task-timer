@@ -9,6 +9,9 @@ Enter your tasks for the day:
 <div id="new-task-form">
   <%= render 'new'  %>
 </div>
+  <ul>
 <div id="current-tasks">
   <%= render partial: 'show_list', locals: {tasks: @tasks} %>
 </div>
+
+  </ul>

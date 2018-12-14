@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
+
   def index
     @task = Task.new
     @tasks = Task.where(user_id: current_user.id)
@@ -7,9 +8,6 @@ class TasksController < ApplicationController
 
   def show
       @tasks = Task.where(user_id: current_user.id)
-      respond_to do |format|
-        format.js
-      end
   end
 
   def new
@@ -18,15 +16,20 @@ class TasksController < ApplicationController
 
   def create
     @task = current_user.tasks.build(task_params)
-    respond_to do |format|
+
     if @task.save
+      @tasks = Task.where(user_id: current_user.id)
       flash[:success] = "Task added"
-        format.js
+      respond_to do |format|
+          format.js
+         end
+
     else
       flash[:error] = "Task not added"
       render 'new'
     end
-  end
+
+
   end
 
 
@@ -34,7 +37,5 @@ class TasksController < ApplicationController
   def task_params
     params.require(:task).permit(:comments)
   end
-
-
 
 end
