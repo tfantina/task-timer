@@ -1,0 +1,8 @@
+<h1>New Project</h1>
+<%= form_for(@project, method: :post) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name, id: "project-name" %>
+<%= f.label "Start Date" %>
+<%= f.date_field :start, id: "date-field" %>
+<%= f.submit "Insert", class: 'btn-submit' %>
+<% end %>
