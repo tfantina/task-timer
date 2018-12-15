@@ -15,3 +15,22 @@ Enter your tasks for the day:
 </div>
 
   </ul>
+
+
+<%= link_to "New Project", new_project_path %>
+
+
+<table>
+
+<tr>
+  <td><strong>Project Name</strong></td>
+  <td><strong>Project Date</strong></td>
+  </tr>
+<% @projects.each do |project| %>
+<tr>
+<td><%= project.name %></td>
+  <td><%= project.start %></td>
+  </tr>
+
+<% end %>
+  </table>

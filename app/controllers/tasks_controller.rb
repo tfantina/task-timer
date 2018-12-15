@@ -4,6 +4,7 @@ class TasksController < ApplicationController
   def index
     @task = Task.new
     @tasks = Task.where(user_id: current_user.id)
+    @projects = Project.all
   end
 
   def show
