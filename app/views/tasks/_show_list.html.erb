@@ -2,7 +2,12 @@
 <% if tasks.present? %>
 
 <% tasks.each do |tsk| %>
-<li><%= tsk.comments %></li>
+<li><%= tsk.comments %>
+<% if tsk.project_id.present? %>
+  <%= tsk.project_id %>
+  <%= projects.find_by(id: tsk.project_id).name%>
+  <% end %>
+  </li>
 <% end %>
 
 <% end %>

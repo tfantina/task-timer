@@ -7,14 +7,17 @@ Enter your tasks for the day:
 
 
 <div id="new-task-form">
-  <%= render 'new'  %>
+  <div class="container">
+    <%= render 'new'  %>
+  </div>
 </div>
-  <ul>
-<div id="current-tasks">
-  <%= render partial: 'show_list', locals: {tasks: @tasks} %>
+<div class="container-fluid">
+<ul>
+  <div id="current-tasks">
+    <%= render partial: 'show_list', locals: {tasks: @tasks, projects: @projects} %>
+  </div>
+</ul>
 </div>
-
-  </ul>
 
 
 <%= link_to "New Project", new_project_path %>
