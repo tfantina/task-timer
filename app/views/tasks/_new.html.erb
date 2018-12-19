@@ -1,13 +1,18 @@
-<%= form_for(@task, method: :post, remote: true) do |f| %>
-<%= f.label "Discribe the task"%>
-<%= f.text_field :comments, id: "task-comments" %>
-<br />
-<%= f.label "Project" %>
-<%= f.collection_select :project_id, Project.order(:name), :id, :name,
-                        include_blank: true %>
-<br />
-<%= f.label "Date (if blank date will be today)" %>
-<%= f.date_field :day %>
-<br  />
-<%= f.submit "Insert", class: 'btn-submit' %>
+<%= form_for(@task, method: :post, remote: true, html: {class: "form-group"}) do |f| %>
+  <%= f.label "Discribe the task"%>
+  <%= f.text_field :comments, id: "task-comments", class: "form-control" %>
+  <br />
+  <%= f.label "Time in minutes" %>
+  <%= f.text_field :time, class: "form-control" %>
+  <%= f.label "Project" %>
+  <%= f.collection_select :project_id, Project.order(:name), :id, :name,
+      {prompt: "Select a project"}, {class: "form-control"} %>
+  <br />
+
+  <%= f.label "Date" %>
+  <%= f.date_select :day,  {class: "form-control"}%>
+
+  <br  />
+
+  <%= f.submit "Insert", class: 'btn btn-primary' %>
 <% end %>

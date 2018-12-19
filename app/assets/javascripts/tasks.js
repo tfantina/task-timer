@@ -1,7 +1,6 @@
 
 
-console.log("loaded")
 function showForm() {
-  console.log("pressed");
-  document.getElementById('new-task-form').style.display = "block";
+  const btn = document.getElementById('new-task-form')
+  btn.style.display == "block" ? btn.style.display = "none" : btn.style.display = "block"
 }

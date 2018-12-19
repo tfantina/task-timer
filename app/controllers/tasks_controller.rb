@@ -3,7 +3,8 @@ class TasksController < ApplicationController
 
   def index
     @task = Task.new
-    @tasks = Task.where(user_id: current_user.id)
+    @tasks = Task.where(user_id: current_user.id).paginate(
+                        page: params[:page], :per_page => 5).order(day: :desc)
     @projects = Project.all
   end
 
@@ -36,7 +37,7 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:comments, :project_id)
+    params.require(:task).permit(:comments, :project_id, :day, :time)
   end
 
 end

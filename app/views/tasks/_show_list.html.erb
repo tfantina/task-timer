@@ -1,13 +1,13 @@
 
 <% if tasks.present? %>
-
+<tbody>
 <% tasks.each do |tsk| %>
-<li><%= tsk.comments %>
-<% if tsk.project_id.present? %>
-  <%= tsk.project_id %>
-  <%= projects.find_by(id: tsk.project_id).name%>
-  <% end %>
-  </li>
+<tr>
+  <td><%= tsk.day %></td>
+  <td><strong> <%= projects.find_by(id: tsk.project_id).name%></strong></td>
+  <td>  <%= tsk.comments %>  </td>
+  <td><%= tsk.time %></td>
+</tr>
 <% end %>
-
+  </tbody>
 <% end %>
