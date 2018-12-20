@@ -25,4 +25,4 @@ production:
   <<: *default
   database: timer_app_production
   username: timer_app
-  password: <%= ENV['SAMPLE_APP_PASSWORD'] %>
+  password: <%= ENV['TIMER_APP__DATABASE_PASSWORD'] %>
