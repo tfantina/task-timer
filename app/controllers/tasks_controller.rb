@@ -17,7 +17,9 @@ class TasksController < ApplicationController
   end
 
   def create
+
     @task = current_user.tasks.build(task_params)
+    @user_task = User_task.build(user_id: current_user.id, task_id: @task.id)
 
     if @task.save
       @tasks = Task.where(user_id: current_user.id)
