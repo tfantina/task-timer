@@ -9,6 +9,18 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <h1 class="navbar-brand">MagicTrackr</h1>
+      <% unless user_signed_in? %>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            Login
+          </li>
+          </ul>
+      </div>
+      <% end %>
+      </nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
