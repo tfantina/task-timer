@@ -3,8 +3,9 @@ class TasksController < ApplicationController
 
   def index
     @task = Task.new
-    @tasks = Task.where(user_id: current_user.id).paginate(
-                        page: params[:page], :per_page => 5).order(day: :desc)
+    @tasks = current_user.tasks.paginate(page: params[:page], :per_page => 5).order(day: :desc)
+    #@tasks = Task.where(user_id: current_user.id).paginate(
+                      #  page: params[:page], :per_page => 5).order(day: :desc)
     @projects = Project.all
   end
 
@@ -19,7 +20,7 @@ class TasksController < ApplicationController
   def create
 
     @task = current_user.tasks.build(task_params)
-    @user_task = @task.user_tasks.build(user_id: @task.user_id, task_id: @task.id)
+    @user_task = @task.UserTask.build
 
     if @task.save
       @tasks = Task.where(user_id: current_user.id)
@@ -39,7 +40,7 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:comments, :project_id, :day, :time)
+    params.require(:task).permit(:comments, :project_id, :day, :time, :users)
   end
 
 end
