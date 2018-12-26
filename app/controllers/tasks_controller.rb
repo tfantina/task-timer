@@ -3,9 +3,14 @@ class TasksController < ApplicationController
 
   def index
     @task = Task.new
+<<<<<<< HEAD
     @tasks = current_user.tasks.paginate(page: params[:page], :per_page => 5).order(day: :desc)
     #@tasks = Task.where(user_id: current_user.id).paginate(
                       #  page: params[:page], :per_page => 5).order(day: :desc)
+=======
+    @tasks = Task.where(current_user.id).paginate(
+                        page: params[:page], :per_page => 5).order(day: :desc)
+>>>>>>> design
     @projects = Project.all
   end
 
