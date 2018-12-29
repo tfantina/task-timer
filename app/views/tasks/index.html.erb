@@ -1,4 +1,4 @@
-<h1>Welcome <%= current_user.name %></h1>
+<h1>Welcome <%= current_user.email %></h1>
 <%=link_to "Log out",  destroy_user_session_path, method: :delete%>
 <br />
 Enter your tasks for the day:
@@ -39,8 +39,10 @@ Enter your tasks for the day:
   </div>
 
 </table>
-<%= will_paginate(@tasks, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
 
+<div class="row justify-content-sm-center">
+<%= will_paginate(@tasks, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+</div>
 </div>
 
 

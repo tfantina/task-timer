@@ -14,7 +14,7 @@
 
   <br  />
   <%= f.label "Other users" %>
-  <%= f.collection_check_boxes(:users, User.all, :id, :email) %>
+  <%= f.collection_check_boxes(:user_ids, User.where.not(id: current_user.id), :id, :email) %>
   <br />
 
   <%= f.submit "Insert", class: 'btn btn-primary' %>

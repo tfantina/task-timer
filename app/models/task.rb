@@ -3,5 +3,4 @@ class Task < ApplicationRecord
   has_many :users, through: :user_tasks
   belongs_to :project
 
-  #before_save {self.day = Date.parse(day)}
 end
