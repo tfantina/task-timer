@@ -26,7 +26,7 @@ class TasksController < ApplicationController
 
 
     if @task.save
-      @tasks = Task.where(user_id: current_user.id)
+      @tasks = current_user.tasks
       flash[:success] = "Task added"
       respond_to do |format|
           format.js
@@ -43,7 +43,7 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:comments, :project_id, :day, :time, :users )
+    params.require(:task).permit(:comments, :project_id, :day, :time)
   end
 
 end
