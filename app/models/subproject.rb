@@ -1,3 +1,4 @@
 class Subproject < ApplicationRecord
-  belongs_to :project
+  has_many :project_associations
+  has_many :projects, through: :project_associations
 end

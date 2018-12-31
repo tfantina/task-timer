@@ -19,8 +19,8 @@ class SubprojectsController < ApplicationController
 
 
 private
-def project_params
-  params.require(:project).permit(:name, :start)
+def subproject_params
+  params.require(:subproject).permit(:name, :description, subproject_ids: [])
 end
 
 
