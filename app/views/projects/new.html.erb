@@ -4,7 +4,9 @@
 <%= f.text_field :name, id: "project-name" %>
 <%= f.label "Start Date" %>
 <%= f.date_field :start, id: "date-field" %>
-<%= f.label "Included projects" %>
+<br />
+<%= f.label "Included subprojects" %>
+<br />
 <%= f.collection_check_boxes(:subproject_ids, Subproject.all, :id, :name) %>
 
 <%= f.submit "Insert", class: 'btn-submit' %>
