@@ -1,19 +1,24 @@
+<div class="container">
+  <div class="row">
 <h1>Welcome <%= current_user.email %></h1>
-<%=link_to "Log out",  destroy_user_session_path, method: :delete%>
+</div>
+<div class="row">
 <br />
 Enter your tasks for the day:
-
-<%= button_tag "Add Task", onclick: "showForm()", class: "btn btn-light" %>
-
-
+</div>
+<div class="row">
+<%= button_tag "Add Task", onclick: "showForm()", class: "btn btn-primary" %>
+</div>
+<div class="row">
 <div id="new-task-form">
   <div class="container border rounded new-task-form">
     <%= render 'new'  %>
   </div>
 </div>
 
+</div>
+<div class="row">
 
-<div class="container border rounded">
 
 
 <table class="table table-hover" id="current-tasks">
@@ -40,26 +45,13 @@ Enter your tasks for the day:
 
 </table>
 
+
 <div class="row justify-content-sm-center">
 <%= will_paginate(@tasks, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
 </div>
 </div>
 
-
-<%= link_to "New Project", new_project_url, class: "btn btn-light" %>
-
-
-<table>
-
-<tr>
-  <td><strong>Project Name</strong></td>
-  <td><strong>Project Date</strong></td>
-  </tr>
-<% @projects.each do |project| %>
-<tr>
-<td><%= project.name %></td>
-  <td><%= project.start %></td>
-  </tr>
-
-<% end %>
-  </table>
+<div class="row">
+<%= link_to "New Project", new_project_url, class: "btn btn-primary" %>
+</div>
+</div>

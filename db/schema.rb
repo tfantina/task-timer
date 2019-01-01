@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181231120203) do
+ActiveRecord::Schema.define(version: 20181231205633) do
 
   create_table "project_assocaitions", force: :cascade do |t|
     t.integer  "project_id"
@@ -39,12 +39,14 @@ ActiveRecord::Schema.define(version: 20181231120203) do
   create_table "tasks", force: :cascade do |t|
     t.datetime "end"
     t.text     "comments"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "time"
     t.integer  "project_id"
     t.date     "day"
+    t.integer  "subproject_id"
     t.index ["project_id"], name: "index_tasks_on_project_id"
+    t.index ["subproject_id"], name: "index_tasks_on_subproject_id"
   end
 
   create_table "user_tasks", force: :cascade do |t|

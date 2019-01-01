@@ -8,8 +8,9 @@
   <%= f.collection_select :project_id, Project.order(:name), :id, :name,
       {prompt: "Select a project"}, {class: "form-control"} %>
   <br />
-  <%= f.collection_select :subproject_id, Subproject.order(:name), :id, :name) %>
-
+  <%= f.grouped_collection_select(:subproject_id, Project.order(:name), :subprojects, :name,
+      :id, :name, {prompt: "Select a subtask" },{class: "form-control"}) %>
+<br / />
   <%= f.label "Date" %>
   <%= f.date_select :day,  {class: "form-control"}%>
 

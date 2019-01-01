@@ -18,6 +18,20 @@
 
 $purple: #8a77dd;
 $deep-purple: #7968c4;
+$light-grey: #8c8c8c;
+
+body {
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+}
+
+
+.page-contents {
+  min-height: 100vh;
+}
+
+
 
 .hero {
   background-color: $purple;
@@ -45,7 +59,10 @@ $deep-purple: #7968c4;
 }
 
 
-
+.jumbotron {
+  margin-top: 20px;
+  background-color: #ffffffc2;
+}
 
 
 p {
@@ -58,4 +75,12 @@ p {
     height: 0px;
     padding: 0px;
   }
+}
+
+
+.footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  color: $light-grey;
 }

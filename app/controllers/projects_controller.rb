@@ -1,4 +1,4 @@
-class ProjectsController < ApplicationController
+ class ProjectsController < ApplicationController
   before_action :authenticate_user!
 
 
@@ -26,7 +26,7 @@ class ProjectsController < ApplicationController
 
   private
   def project_params
-    params.require(:project).permit(:name, :start)
+    params.require(:project).permit(:name, :start, subproject_ids: [])
   end
 
 end

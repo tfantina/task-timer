@@ -44,7 +44,7 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:comments, :project_id, :day, :time, user_ids: [])
+    params.require(:task).permit(:comments, :project_id, :subproject_id, :day, :time, user_ids: [])
   end
 
 end
