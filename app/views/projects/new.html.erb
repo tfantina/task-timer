@@ -7,7 +7,14 @@
 <br />
 <%= f.label "Included subprojects" %>
 <br />
-<%= f.collection_check_boxes(:subproject_ids, Subproject.all, :id, :name) %>
+<ul>
+  <%= f.collection_check_boxes(:subproject_ids, Subproject.all, :id, :name) do |box| %>
+  <li>
+  <%= box.check_box + box.text %>
+  </li>
+  <% end %>
+
+  </ul>
 
 <%= f.submit "Insert", class: 'btn-submit' %>
 <% end %>
