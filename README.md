@@ -1,24 +1,27 @@
-# README
+# MagicTracker (name suggestions welcome)
+---
+### v0.1.0
+---
+MagicTracker🕵🏻‍ is a way for teams to track their time for
+budgeting and resource allocation.  Users enter their
+tasks in relation to any and all projects they are working
+on.  
+Projects can have subcategories (called Subtasks) such as
+"Meeting", "Communication", "Development", or "Design".
+Users can add other users who collaborated on a task.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+MVP is now working.
 
-Things you may want to cover:
+Features in development for v 1.0.0
+- Admin Panel
+  - Set costs associated with a user's time
+  - Moderate and edit existing Projects
+  - Analytics on Projects
 
-* Ruby version
+- Password recovery
+- Usernames
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  
+---
+Created by Travis Fantina © 2019
