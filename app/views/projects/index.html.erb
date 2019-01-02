@@ -1,0 +1,35 @@
+<% provide(:title, "All Projects") %>
+<div class="container">
+  <div class="row">
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>
+        Name:
+        </th>
+        <th>
+          Started on:
+          </th>
+          <th>
+            Tasks:
+            </th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @projects.each do |p| %>
+      <tr>
+        <td><strong><%= p.name %></strong></td>
+        <td><%= p.start %></td>
+        <td><%= p.tasks.count %></td>
+      </tr>
+      <% end %>
+        </tbody>
+
+
+</table>
+
+<div class="row">
+<%= link_to "New Project", new_project_url, class: "btn btn-primary" %>
+</div>
+</div>
