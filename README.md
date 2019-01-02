@@ -22,6 +22,11 @@ Features in development for v 1.0.0
 - Usernames
 
 
-  
+---
+## Shoutouts 📣
+
+Huge thank you to [Hero Patterns](https://www.heropatterns.com) which allowed me to make a stylish background on the MVP quickly and easily.
+
+
 ---
 Created by Travis Fantina © 2019
