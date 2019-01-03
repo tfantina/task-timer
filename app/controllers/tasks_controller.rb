@@ -41,6 +41,22 @@ class TasksController < ApplicationController
 
   end
 
+  def edit
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    if @task.update(task_params)
+      current_user.tasks << @task
+      flash[:success] = "Project updated"
+      redirect_to tasks_path
+    else
+      flash[:error] = "Project nod updated"
+      render 'edit'
+    end
+  end
+
 
   private
   def task_params

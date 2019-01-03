@@ -8,10 +8,10 @@ class SubprojectsController < ApplicationController
       @subproject = Subproject.create(subproject_params)
 
       if @subproject.save
-        flash[:success] = "Project started"
+        flash[:success] = "Subtask created"
         redirect_to tasks_path
       else
-        flash[:error] = "project not added"
+        flash[:error] = "Subtask not added"
         render 'new'
       end
 

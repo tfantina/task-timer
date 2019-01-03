@@ -1,20 +1,4 @@
-<h1>New Project</h1>
-<%= form_for(@project, method: :post) do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name, id: "project-name" %>
-<%= f.label "Start Date" %>
-<%= f.date_field :start, id: "date-field" %>
-<br />
-<%= f.label "Included subprojects" %>
-<br />
-<ul>
-  <%= f.collection_check_boxes(:subproject_ids, Subproject.all, :id, :name) do |box| %>
-  <li>
-  <%= box.check_box + box.text %>
-  </li>
-  <% end %>
-
-  </ul>
-
-<%= f.submit "Insert", class: 'btn-submit' %>
-<% end %>
+<div class="container">
+  <h1>New Project</h1>
+  <%= render 'form', btn_name: "Start Project"%>
+</div>

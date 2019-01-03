@@ -22,7 +22,20 @@
 
   end
 
+  def edit
+    @project = Project.find(params[:id])
+  end
 
+  def update
+    @project = Project.find(params[:id])
+    if @project.update(project_params)
+      flash[:success] = "Project updated"
+      redirect_to projects_path
+    else
+      flash[:error] = "Project nod updated"
+      render 'edit'
+    end
+  end
 
 
 
