@@ -1,0 +1,20 @@
+<%= form_for(@project) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name, id: "project-name" %>
+<%= f.label "Start Date" %>
+<%= f.date_field :start, id: "date-field" %>
+<br />
+<%= f.label "Included subprojects" %>
+<br />
+<ul>
+  <%= f.collection_check_boxes(:subproject_ids, Subproject.all, :id, :name) do |box| %>
+  <li>
+  <%= box.check_box + box.text %>
+  </li>
+  <% end %>
+
+  </ul>
+
+<%= f.submit name: btn_name, class: 'btn btn-primary' %>
+
+<% end %>

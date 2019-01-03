@@ -1,0 +1,23 @@
+<%= form_for(@task,  html: {class: "form-group"}) do |f| %>
+  <%= f.label "Describe the task"%>
+  <%= f.text_field :comments, id: "task-comments", class: "form-control" %>
+  <br />
+  <%= f.label "Time in minutes" %>
+  <%= f.text_field :time, class: "form-control" %>
+  <%= f.label "Project" %>
+  <%= f.collection_select :project_id, Project.order(:name), :id, :name,
+      {prompt: "Select a project"}, {class: "form-control"} %>
+  <br />
+  <%= f.grouped_collection_select(:subproject_id, Project.order(:name), :subprojects, :name,
+      :id, :name, {prompt: "Select a subtask" },{class: "form-control"}) %>
+<br / />
+  <%= f.label "Date" %>
+  <%= f.date_select :day,  {class: "form-control"}%>
+
+  <br  />
+  <%= f.label "Collaborators" %>
+  <%= f.collection_check_boxes(:user_ids, User.where.not(id: current_user.id), :id, :email) %>
+  <br />
+
+  <%= f.submit "Edit Task", class: 'btn btn-primary' %>
+<% end %>
