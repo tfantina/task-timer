@@ -2,7 +2,7 @@
   before_action :authenticate_user!
 
   def index
-    @projects = Project.all
+    @projects = Project.all.order(name: :asc)
   end
 
   def new
