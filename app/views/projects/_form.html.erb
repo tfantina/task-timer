@@ -6,9 +6,9 @@
 <br />
 <%= f.label "Included subprojects" %>
 <br />
-<ul>
+<ul class="list-group">
   <%= f.collection_check_boxes(:subproject_ids, Subproject.all, :id, :name) do |box| %>
-  <li>
+  <li class="list-group-item">
   <%= box.check_box + box.text %>
   </li>
   <% end %>
