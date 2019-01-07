@@ -22,7 +22,7 @@
       <tbody>
       <% @projects.each do |p| %>
       <tr>
-        <td><strong><%= p.name %></strong></td>
+        <td><%= link_to p.name, project_path(p), style: "strong" %></td>
         <td><%= p.start %></td>
         <td><%= p.tasks.count %></td>
         <td><%= link_to "edit", edit_project_path(p)%></td>

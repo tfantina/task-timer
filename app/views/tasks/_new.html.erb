@@ -16,8 +16,11 @@
 
   <br  />
   <%= f.label "Collaborators" %>
-  <%= f.collection_check_boxes(:user_ids, User.where.not(id: current_user.id), :id, :email) %>
-  <br />
+  <ul class="list-group">
+    <%= f.collection_check_boxes(:user_ids, User.where.not(id: current_user.id), :id, :email_or_user_name) do |box| %>
+    <li class="list-group-item"> <%= box.check_box + box.text%> </li>
 
+    <% end %>
+    </ul>
   <%= f.submit "Add Task", class: 'btn btn-primary' %>
 <% end %>
