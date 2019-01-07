@@ -1,0 +1,44 @@
+<% provide(:title, @project.name) %>
+<div class="container">
+  <div class="row">
+    <h1><%= @project.name %></h1>
+    </div>
+    <div class="row">
+      <div class="col-sm">Total time:</div>
+      <div class="col-lg">
+        <%= pluralize(@project.tasks.sum(:time), "minute")%>
+      </div>
+      <div class="col-sm">    </div>
+      </div>
+    <div class="row">
+      <% if @project.tasks.present? %>
+      <table class="table table-hover">
+        <thead class="thead-dark">
+
+          <th>
+            Task completed on:
+            </th>
+            <th>
+              Comments:
+              </th>
+              <th>
+                Time
+                </th>
+          </thead>
+
+      <tbody>
+      <% @project.tasks.each do |tsk| %>
+      <tr>
+        <td><%= tsk.day %></td>
+        <td>  <%= tsk.comments %>  </td>
+        <td><%= tsk.time %></td>
+      </tr>
+      <% end %>
+        </tbody>
+              </table>
+        <% else %>
+        <h2>This project has no completed tasks yet.</h2>
+      <% end %>
+
+    </div>
+    </div>
