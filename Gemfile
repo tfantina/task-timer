@@ -46,7 +46,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'sqlite3', '1.3.13'
   gem 'minitest-reporters'
-
+  gem 'faker'
 
 end
 
