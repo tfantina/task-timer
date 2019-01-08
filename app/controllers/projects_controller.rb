@@ -7,6 +7,8 @@
 
   def show
     @project = Project.find(params[:id])
+    @tasks = @project.tasks.order(day: :desc)
+
   end
 
   def new

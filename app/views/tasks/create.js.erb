@@ -1,3 +1,5 @@
+
+
 $("#task-comments").val('');
 
-$("#current-tasks").append('<li><%= j (@task.comments) %></li>');
+$("#active-tasks").append('<tr><td><%= j (@task.comments) %></td></tr>');
