@@ -27,6 +27,8 @@ Features in development for v 1.0.0
 
 Huge thank you to [Hero Patterns](https://www.heropatterns.com) which allowed me to make a stylish background on the MVP quickly and easily.
 
+[MDBootstrap](https://mdbootstrap.com/docs/jquery/javascript/scroll/) for their cool scrollbars
+I'm using in the initial release of this.
 
 ---
 Created by Travis Fantina © 2019

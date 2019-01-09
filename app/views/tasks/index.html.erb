@@ -8,15 +8,17 @@
 Enter your tasks for the day:
 </div>
 <div class="row">
+
 <%= button_tag "Add Task", onclick: "showForm()", class: "btn btn-primary" %>
 </div>
 <div class="row">
+    <div class="container-fluid">
 <div id="new-task-form">
   <div class="container border rounded new-task-form">
     <%= render 'new'  %>
   </div>
 </div>
-
+</div>
 </div>
 <div class="row">
 
