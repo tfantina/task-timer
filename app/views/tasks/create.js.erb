@@ -2,4 +2,4 @@
 
 $("#task-comments").val('');
 
-$("#active-tasks").append('<tr><td><%= j (@task.comments) %></td></tr>');
+$("#active-tasks").prepend('<%= j render "new_added" %>');
