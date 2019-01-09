@@ -1,0 +1,19 @@
+@import 'scrollbar';
+
+.sub-task {
+  max-height: 200px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  direction: rtl;
+
+}
+
+.sub-task::-webkit-scrollbar-track {
+  @extend %scroll-track;
+}
+.sub-task::-webkit-scrollbar {
+  @extend %scroll-bar;
+}
+.sub-task::-webkit-scrollbar-thumb {
+  @extend %scroll-thumb;
+}

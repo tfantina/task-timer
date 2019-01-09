@@ -4,12 +4,28 @@
     <h1><%= @project.name %></h1>
     </div>
     <div class="row">
-      <div class="col-sm">Total time:</div>
-      <div class="col-lg">
+      <div class="col-xs">Project Summary:</div>
+      <div class="col-xl"><%= @project.summary %></div>
+    </div>
+    <div class="row">
+      <div class="col-xs">Total time:</div>
+      <div class="col-xl">
         <%= pluralize(@project.tasks.sum(:time), "minute")%>
       </div>
-      <div class="col-sm">    </div>
       </div>
+      <div class="row">
+        <div class="col-xs">Precentage Complete:</div>
+        <div class="col-xl">
+          <div class="progress-bar progress-bar-success"
+              role="progressbar"
+              aria-value-now="<%= @project.precentage_complete %>"
+              aria-valuemin="0", aria-valuemax="100"
+              style="width:<%= @project.precentage_complete %>">
+        </div>
+      </div>
+      </div>
+
+
     <div class="row">
       <% if @project.tasks.present? %>
       <table class="table table-hover">

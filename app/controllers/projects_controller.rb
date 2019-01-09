@@ -47,7 +47,8 @@
 
   private
   def project_params
-    params.require(:project).permit(:name, :start, subproject_ids: [])
+    params.require(:project).permit(:name, :start, :precentage_complete,
+                                  :summary, :go_live, subproject_ids: [])
   end
 
 end

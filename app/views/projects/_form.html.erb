@@ -1,13 +1,20 @@
-<%= form_for(@project) do |f| %>
+<%= form_for(@project, html: {class: "form-group"}) do |f| %>
 <%= f.label :name %>
-<%= f.text_field :name, id: "project-name" %>
+<%= f.text_field :name, id: "project-name", class: "form-control" %>
+<%= f.label :summary%>
+<%= f.text_field :go_live, id: "go-live", class: "form-control" %>
+<%= f.label :go_live%>
+<%= f.date_field :go_live, id: "go-live", class: "form-control" %>
+<%= f.label :precentage_complete %>
+<%= f.number_field :precentage_complete, id: "go-live", class: "form-control" %>
 <%= f.label "Start Date" %>
-<%= f.date_field :start, id: "date-field" %>
+<%= f.date_field :start, id: "date-field", class: "form-control" %>
 <br />
 <%= f.label "Included subprojects" %>
 <br />
-<ul class="list-group">
-  <%= f.collection_check_boxes(:subproject_ids, Subproject.all, :id, :name) do |box| %>
+<ul class="list-group sub-task">
+  <%= f.collection_check_boxes(:subproject_ids, Subproject.order(:name), :id,
+                              :name, {class: "form-control"}) do |box| %>
   <li class="list-group-item">
   <%= box.check_box + box.text %>
   </li>

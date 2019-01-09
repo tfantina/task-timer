@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181231205633) do
+ActiveRecord::Schema.define(version: 20190109111518) do
 
   create_table "project_assocaitions", force: :cascade do |t|
     t.integer  "project_id"
@@ -25,8 +25,11 @@ ActiveRecord::Schema.define(version: 20181231205633) do
     t.string   "name"
     t.datetime "start"
     t.decimal  "cost"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.decimal  "precentage_complete"
+    t.string   "summary"
+    t.date     "go_live"
   end
 
   create_table "subprojects", force: :cascade do |t|
