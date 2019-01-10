@@ -1,0 +1,29 @@
+@import 'colors';
+.btn-primary {
+  background-color: $primary-purple;
+  border-color: $primary-purple-dark;
+  color: $grey;
+  box-shadow: 2px 3px 8px $light-grey;
+    a:link, a:visited {
+      color: $grey;
+    }
+
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+@mixin btncolors($property1, $property2) {
+  background-color: $property1;
+  border-color: $property2;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:target{
+  @include btncolors($primary-purple-dark, $primary-purple-dark)
+}
+
+.btn-primary:active{
+  background-color: $primary-purple-dark !important;
+  border-color: $primary-purple-dark;
+}
