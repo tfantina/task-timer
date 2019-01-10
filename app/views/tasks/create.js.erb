@@ -4,4 +4,5 @@ $("#task-comments").val('');
 
 $("#active-tasks").prepend('<%= j render "new_added" %>');
 
-$("#new-task-form").append("<%= flash[:notice]  %>")
+$("#new-task-form").append(
+  "<div class='alert alert-success'><%= flash[:notice]  %></div>")
