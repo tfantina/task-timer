@@ -28,13 +28,13 @@ class TasksController < ApplicationController
     if @task.save
       current_user.tasks << @task
       @tasks = current_user.tasks
-      flash[:success] = "Task added"
+      flash.now[:success] = "Task added"
       respond_to do |format|
-          format.js
+          format.js {flash[:notice] = "Task added"}
          end
 
     else
-      flash[:danger] = "Task not added"
+      flash.now[:danger] = "Task not added"
       render 'new'
     end
 

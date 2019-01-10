@@ -1,11 +1,11 @@
 @import 'colors';
 .btn-primary {
-  background-color: $primary-purple;
+  background-color: $primary-purple-dark;
   border-color: $primary-purple-dark;
-  color: $grey;
+  color: $white;
   box-shadow: 2px 3px 8px $light-grey;
     a:link, a:visited {
-      color: $grey;
+      color: $white;
     }
 
     padding: 10px;
@@ -19,11 +19,58 @@
 }
 .btn-primary:hover,
 .btn-primary:focus,
-.btn-primary:target{
-  @include btncolors($primary-purple-dark, $primary-purple-dark)
+{
+  @include btncolors($primary-purple, $primary-purple-dark)
 }
 
 .btn-primary:active{
-  background-color: $primary-purple-dark !important;
-  border-color: $primary-purple-dark;
+  @include btncolors($primary-purple, $primary-purple-dark)
+}
+
+.btn-success {
+  background-color: $success-sea-dark;
+  border-color: $success-sea-dark;
+  color: $grey;
+  box-shadow: 2px 3px 8px $light-grey;
+    a:link, a:visited {
+      color: $grey;
+    }
+
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+.btn-success:hover,
+.btn-success:focus,
+{
+  @include btncolors($success-sea, $success-sea-dark)
+}
+
+.btn-primary:active{
+  @include btncolors($success-sea, $success-sea-dark)
+}
+
+.btn-secondary {
+  background-color: $secondary-grey;
+  border-color: $secondary-grey-dark;
+  color: $grey;
+  box-shadow: 2px 3px 8px $light-grey;
+    a:link, a:visited {
+      color: $grey;
+    }
+
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus,
+{
+  @include btncolors($secondary-grey-dark, $secondary-grey-dark)
+}
+
+.btn-primary:active{
+  @include btncolors($secondary-grey-dark, $secondary-grey-dark)
 }
