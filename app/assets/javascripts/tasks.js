@@ -5,7 +5,9 @@ function showForm() {
   btn.style.display == "block" ? btn.style.display = "none" : btn.style.display = "block"
 }
 
-jQuery(function() {
+jQuery(
+
+  $(document).on('turbolinks:load', function() {
   let subtasks;
   subtasks = $('#task_subproject_id').html();
   return $('#task_project_id').change(function(){
@@ -18,4 +20,5 @@ jQuery(function() {
       return $('#task_subproject_id').empty();
     }
   });
-});
+})
+);

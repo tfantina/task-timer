@@ -14,10 +14,8 @@
  *= require_self
  */
  @import 'bootstrap';
-
-$purple: #8a77dd;
-$deep-purple: #7968c4;
-$light-grey: #8c8c8c;
+ @import 'buttons';
+ @import 'colors';
 
 body {
   min-height: 100vh;
@@ -43,29 +41,6 @@ body {
   color: $purple;
 }
 
-
-.btn-primary {
-  background-color: $purple;
-  border-color: $deep-purple;
-    a:link, a:visited {
-      color: #ffffff;
-    }
-    :hover {
-      background-color: $deep-purple;
-      border-color: $deep-purple;
-    }
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px
-
-
-
-}
-
-.btn-primary:hover {
-  background-color: $deep-purple;
-    border-color: $deep-purple;
-}
 
 
 .jumbotron {
