@@ -1,4 +1,5 @@
 class Subproject < ApplicationRecord
   has_many :project_assocaitions
   has_many :projects, through: :project_assocaitions
+    validates :name, presence: true, length: {minimum: 2}
 end

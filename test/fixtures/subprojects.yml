@@ -1,11 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  project: one
-  name: MyString
-  description: MyString
+  name: Project1
+  description: The first song
 
 two:
-  project: two
-  name: MyString
-  description: MyString
+  name: Project2
+  description: Wicked gill
