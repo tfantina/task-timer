@@ -1,6 +1,6 @@
 # MagicTracker (name suggestions welcome)
 ---
-### v0.1.0
+### v0.2.0
 ---
 MagicTracker🕵🏻‍ is a way for teams to track their time for
 budgeting and resource allocation.  Users enter their
@@ -17,9 +17,10 @@ Features in development for v 1.0.0
   - Set costs associated with a user's time
   - Moderate and edit existing Projects
   - Analytics on Projects
+- Full Test Coverage
 
-- Password recovery
-- Usernames
+~~Password recovery~~
+~~Usernames~~
 
 
 ---
