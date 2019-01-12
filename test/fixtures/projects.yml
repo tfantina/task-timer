@@ -1,11 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+projectOne:
+  name: Project title
   start: 2018-12-14 16:55:24
-  cost: 9.99
+  cost: 10000
+  summary: Project yml for testing
 
-two:
+projectTwo:
+
   name: MyString
   start: 2018-12-14 16:55:24
-  cost: 9.99
+  cost: 3000
+  summary: Project yml for testing

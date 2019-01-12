@@ -9,7 +9,9 @@ travis:
     email: travis@example.com
     name: Travis
     encrypted_password: password5
-# column: value
-#
-two: {}
-# column: value
+
+two:
+    id: 2
+    email: ruby@example.comment
+    name: Ruby
+    encrypted_password: passwordGo
