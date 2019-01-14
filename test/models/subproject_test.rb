@@ -20,6 +20,12 @@ class SubprojectTest < ActiveSupport::TestCase
      assert @subproject.valid?
    end
 
+   test "subproject name is unique" do
+     duplicate_sub = @subproject.dup
+     @subproject.save
+     assert_not duplicate_sub.valid?
+   end
+
 
   test "subrojecct does not need a description" do
     @subproject.description = " "

@@ -54,7 +54,9 @@ group :test do
     gem 'guard'
     gem 'guard-minitest'
     gem 'minitest-rails-capybara'
+    gem 'factory_bot_rails', '~>4.0' 
 end
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

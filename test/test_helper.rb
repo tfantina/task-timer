@@ -4,6 +4,7 @@ require 'rails/test_help'
 require 'minitest/reporters'
 require 'minitest/rails/capybara'
 
+
 Minitest::Reporters.use!
 
 include Capybara::DSL
@@ -11,7 +12,7 @@ include Warden::Test::Helpers
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
-  fixtures :all
+  #fixtures :all
    config.include Capybara::DSL
 
   def sign_in_as(user)
@@ -19,6 +20,6 @@ class ActiveSupport::TestCase
                                      password: user.password}
   end
 
-  
+
 
 end

@@ -1,6 +1,6 @@
 # MagicTracker (name suggestions welcome)
 ---
-### v0.2.0
+### v0.2.1
 ---
 MagicTracker🕵🏻‍ is a way for teams to track their time for
 budgeting and resource allocation.  Users enter their
@@ -19,9 +19,23 @@ Features in development for v 1.0.0
   - Analytics on Projects
 - Full Test Coverage
 
-~~Password recovery~~
-~~Usernames~~
+- ~~Password recovery~~
 
+- ~~Usernames~~
+
+---
+## Major Dependencies 👨‍👩‍👧‍👧
+- Devise for authentication
+- Bootstrap for rapid prototyping
+- Testing
+  - Guard
+  - Minitest reporters
+  - Capybara 
+  - FactoryBot
+  - Faker
+- Database
+  - PG for production
+  - SQLite3 for development
 
 ---
 ## Shoutouts 📣

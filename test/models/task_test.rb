@@ -1,11 +1,11 @@
 require 'test_helper'
-
+include FactoryBot::Syntax::Methods
 class TaskTest < ActiveSupport::TestCase
   def setup
-    @travis = users :travis
+    @user = build(:user)
     @project = projects :projectOne
     @task = Task.new(comments: "Basic task", project_id: @project.id, subproject_id: 2,
-                      day: "2019-01-09", time: 55, user_ids: [@travis.id])
+                      day: "2019-01-09", time: 55, user_ids: [@user.id])
   end
 
 

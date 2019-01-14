@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: Project1
+sub_one:
+  name: Communication
   description: The first song
 
-two:
-  name: Project2
+sub_two:
+  name: Other
   description: Wicked gill
