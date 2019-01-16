@@ -1,2 +1,6 @@
-$("#new-task-form").append(
-  "<div class='alert alert-danger'><%= flash[:danger] %></div>")
+if(!document.getElementById('tsk-err')) {
+  $("#new-task-form").append(
+    "<div class='alert alert-danger' id='tsk-err'><%= flash[:danger] %></div>")
+} else {
+  $("#tsk-err").innerHTML("<%= flash[:danger] %>")
+}

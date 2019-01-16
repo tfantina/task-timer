@@ -1,11 +1,10 @@
-@import 'colors';
+@import "colors";
 
 .btn {
   box-shadow: 2px 3px 8px $light-grey;
   padding: 10px;
   margin-top: 10px;
-  margin-bottom: 10px
-
+  margin-bottom: 10px;
 }
 .btn:active {
   box-shadow: 0px;
@@ -22,16 +21,17 @@
   border-color: $primary-purple;
 }
 
-.btn-primary:hover, .btn-primary:focus,
-.btn-primary.focus, .btn-primary.show,
-.open .dropdown-toggle.btn-primary{
-  @include btncolors($primary-purple-dark, $primary-purple)
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary.show,
+.open .dropdown-toggle.btn-primary {
+  @include btncolors($primary-purple-dark, $primary-purple);
 }
 
 .btn-primary:focus,
 .btn-primary.focus {
   box-shadow: 0 0 0 0.2rem $primary-purple-lite;
-
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus,
@@ -42,12 +42,11 @@
 
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
-.show > .btn-primary.dropdown-toggle, .btn-primary.active,
+.show > .btn-primary.dropdown-toggle,
+.btn-primary.active,
 .btn-primary:active {
-  @include btncolors($purple-ultradark, $primary-purple)
+  @include btncolors($purple-ultradark, $primary-purple);
 }
-
-
 
 .btn-success {
   background-color: $success-sea;
@@ -55,10 +54,13 @@
   color: $grey;
 }
 
-.btn-success:hover, .btn-success:focus,
-.btn-success.focus, .btn-success.show,
-.open .dropdown-toggle.btn-success{
-  @include btncolors($success-sea-dark, $success-sea)
+.btn-success:hover,
+.btn-success:focus,
+.btn-success.focus,
+.btn-success.show,
+.open .dropdown-toggle.btn-success {
+  color: $grey;
+  @include btncolors($success-sea-dark, $success-sea);
 }
 .btn-success:focus,
 .btn-success.focus {
@@ -75,11 +77,11 @@
 
 .btn-success:not(:disabled):not(.disabled):active,
 .btn-success:not(:disabled):not(.disabled).active,
-.show > .btn-success.dropdown-toggle, .btn-success.active,
+.show > .btn-success.dropdown-toggle,
+.btn-success.active,
 .btn-success:active {
-  @include btncolors($success-sea-ultradark, $success-sea)
+  @include btncolors($success-sea-ultradark, $success-sea);
 }
-
 
 .btn-secondary {
   background-color: $secondary-grey;
@@ -87,10 +89,12 @@
   color: $white;
 }
 
-.btn-secondary:hover, .btn-secondary:focus,
-.btn-secondary.focus, .btn-secondary.show,
-.open .dropdown-toggle.btn-secondary{
-  @include btncolors($secondary-grey-dark, $secondary-grey)
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary.focus,
+.btn-secondary.show,
+.open .dropdown-toggle.btn-secondary {
+  @include btncolors($secondary-grey-dark, $secondary-grey);
 }
 
 .btn-secondary:focus,
@@ -105,7 +109,8 @@
 
 .btn-secondary:not(:disabled):not(.disabled):active,
 .btn-secondary:not(:disabled):not(.disabled).active,
-.show > .btn-secondary.dropdown-toggle, .btn-secondary.active,
+.show > .btn-secondary.dropdown-toggle,
+.btn-secondary.active,
 .btn-secondary:active {
-  @include btncolors($secondary-grey-ultradark, $secondary-grey)
+  @include btncolors($secondary-grey-ultradark, $secondary-grey);
 }
