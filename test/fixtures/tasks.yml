@@ -1,13 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-sub_one:
+tskone:
   end: 2018-11-29 18:35:05
   comments: Worked on this object.
   time: 20
   project_id: 2
 
-sub_two:
-
+tsktwo:
   end: 2018-11-29 18:35:05
   comments: MyText
   time: 25

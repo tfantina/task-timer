@@ -12,7 +12,7 @@ include Warden::Test::Helpers
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
-  #fixtures :all
+  fixtures :all
    config.include Capybara::DSL
 
   def sign_in_as(user)

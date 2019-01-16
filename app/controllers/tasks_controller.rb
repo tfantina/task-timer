@@ -57,6 +57,12 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy
+    Task.find(params[:id]).destroy
+    flash[:success] = "Task Deleted"
+    redirect_to tasks_path
+  end
+
 
   private
   def task_params

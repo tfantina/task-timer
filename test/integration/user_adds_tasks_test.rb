@@ -2,10 +2,12 @@ require 'test_helper'
 
 class UserAddsTasksTest < ActionDispatch::IntegrationTest
     def setup
-      @task1 = tasks :one
-      @task2 = tasks :two
+      @task1 = tasks :tskone
+      @task2 = tasks :tsktwo
       @travis = users :travis
-      @newTask = Task.new(user_id: @travis.id, comments: "New Task")
+      @project = projects :projectOne
+      @newtask = Task.new(comments: "Basic task", project_id: @project.id, subproject_id: 2,
+                        day: "2019-01-09", time: 55, user_ids: [@travis.id])
 
      login_as(@travis, :scope => :user)
 
@@ -13,9 +15,9 @@ class UserAddsTasksTest < ActionDispatch::IntegrationTest
 
     test "user can add a task" do
         visit tasks_path
-        click_on "Add Task"
+        click_on "New Task"
         fill_in "task[comments]", with: "Sample Task"
-        click_button "Insert"
+        click_button "Add Task"
 
         assert page.has_content? "Simple Task"
 

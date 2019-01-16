@@ -5,13 +5,15 @@
 # below each fixture, per the syntax in the comments below
 #
 travis:
-    id: 1
-    email: travis@example.com
-    name: Travis
-    encrypted_password: password5
+  id: 1
+  email: travis@example.com
+  name: Travis
+  encrypted_password: password5
+  admin: t
 
 two:
-    id: 2
-    email: ruby@example.comment
-    name: Ruby
-    encrypted_password: passwordGo
+  id: 2
+  email: ruby@example.comment
+  name: Ruby
+  encrypted_password: passwordGo
+  admin: f

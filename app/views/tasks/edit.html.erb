@@ -20,4 +20,12 @@
   <br />
 
   <%= f.submit "Edit Task", class: 'btn btn-primary' %>
+
+<% end %>
+
+<% if current_user.admin? %>
+  <div class="alert-danger">
+    <h2>Danger Zone:</h2>
+    <%= button_to "Delete Task", task_path(@task), data: { confirm: "Are you sure?" }, method: :delete %>
+  </div>
 <% end %>
