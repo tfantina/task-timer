@@ -47,6 +47,7 @@ group :development, :test do
   gem 'sqlite3', '1.3.13'
   gem 'minitest-reporters'
   gem 'faker'
+  gem 'rubocop', '~> 0.63.0', require: false
 
 end
 
@@ -54,7 +55,7 @@ group :test do
     gem 'guard'
     gem 'guard-minitest'
     gem 'minitest-rails-capybara'
-    gem 'factory_bot_rails', '~>4.0' 
+    gem 'factory_bot_rails', '~>4.0'
 end
 
 

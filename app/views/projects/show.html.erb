@@ -38,8 +38,16 @@
               Comments:
               </th>
               <th>
-                Time
+                Time:
                 </th>
+                <% if current_user.admin? %>
+                <th>
+                  Collaborator(s):
+                  </th>
+                <th>
+                   Edit:
+                  </th>
+                  <% end %>
           </thead>
 
       <tbody>
@@ -48,6 +56,10 @@
         <td><%= tsk.day %></td>
         <td>  <%= tsk.comments %>  </td>
         <td><%= tsk.time %></td>
+        <% if current_user.admin %>
+        <td><%= User.find_by(id: tsk.user_ids).email %></td>
+        <td><%= link_to "Edit", edit_task_path(tsk) %></td>
+        <% end %>
       </tr>
       <% end %>
         </tbody>

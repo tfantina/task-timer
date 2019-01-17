@@ -8,4 +8,6 @@ class Task < ApplicationRecord
   validates :day, presence: true
   validates_associated :project
 
+
+
 end

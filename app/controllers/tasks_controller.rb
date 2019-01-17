@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
+  before_action :correct_user, only: [:edit, :update]
 
   def index
     @task = Task.new
@@ -43,6 +44,7 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+
   end
 
   def update
@@ -69,4 +71,11 @@ class TasksController < ApplicationController
     params.require(:task).permit(:comments, :project_id, :subproject_id, :day, :time, user_ids: [])
   end
 
+
+    def correct_user
+        @task = Task.find_by(id: params[:id])
+        unless current_user.admin? or @task.user_ids.include? current_user.id
+          redirect_to tasks_path
+        end
+  end
 end
