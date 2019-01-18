@@ -16,7 +16,7 @@ class TasksController < ApplicationController
       @current_usr_task = UserTasks.where(user_id: current_user.id)
       @tasks = Task.where(id: @current_usr_task.task_id)
   end
- 
+
   def new
     @task = Task.new
   end
@@ -51,10 +51,10 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     if @task.update(task_params)
       current_user.tasks << @task
-      flash[:success] = "Project updated"
+      flash[:success] = "Task updated"
       redirect_to tasks_path
     else
-      flash[:error] = "Project nod updated"
+      flash[:error] = "Task not updated"
       render 'edit'
     end
   end

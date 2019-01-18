@@ -1,4 +1,14 @@
 <div class="container">
   <h1>Update Project</h1>
   <%= render 'form', btn_name: "Update Project"%>
+
+
+<% if current_user.admin? %>
+  <div class="alert-danger">
+    <h2>Danger Zone:</h2>
+    <%= button_to "Delete Project", project_path(@project), data: {
+       confirm: "Are you sure? Deleting a project will delete all associated tasks!" }, method: :delete %>
+  </div>
+<% end %>
+<br />
 </div>

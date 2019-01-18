@@ -43,6 +43,12 @@
     end
   end
 
+  def destroy
+    Project.find(params[:id]).destroy
+    flash[:success] = "Project Deleted"
+    redirect_to projects_path
+  end
+
 
 
   private
