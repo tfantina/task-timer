@@ -16,7 +16,7 @@ class TasksController < ApplicationController
       @current_usr_task = UserTasks.where(user_id: current_user.id)
       @tasks = Task.where(id: @current_usr_task.task_id)
   end
-
+ 
   def new
     @task = Task.new
   end
