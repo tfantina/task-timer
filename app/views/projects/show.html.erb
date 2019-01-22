@@ -19,10 +19,14 @@
           <div class="progress-bar progress-bar-success"
               role="progressbar"
               aria-value-now="<%= @project.precentage_complete %>"
-              aria-valuemin="0", aria-valuemax="100"
-              style="width:<%= @project.precentage_complete %>">
+              aria-valuemin="0" aria-valuemax="100"
+              style="width:<%= @project.precentage_complete %>%">
+              <span><%= @project.precentage_complete %>% completed</span>
         </div>
+
       </div>
+
+
       </div>
 
 

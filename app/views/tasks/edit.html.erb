@@ -1,31 +1,42 @@
-<%= form_for(@task,  html: {class: "form-group"}) do |f| %>
-  <%= f.label "Describe the task"%>
-  <%= f.text_field :comments, id: "task-comments", class: "form-control" %>
-  <br />
-  <%= f.label "Time in minutes" %>
-  <%= f.text_field :time, class: "form-control" %>
-  <%= f.label "Project" %>
-  <%= f.collection_select :project_id, Project.order(:name), :id, :name,
-      {prompt: "Select a project"}, {class: "form-control"} %>
-  <br />
-  <%= f.grouped_collection_select(:subproject_id, Project.order(:name), :subprojects, :name,
-      :id, :name, {prompt: "Select a subtask" },{class: "form-control"}) %>
-<br / />
-  <%= f.label "Date" %>
-  <%= f.date_select :day,  {class: "form-control"}%>
+<div class="container">
+  <h1>Edit Task</h1>
 
-  <br  />
-  <%= f.label "Collaborators" %>
-  <%= f.collection_check_boxes(:user_ids, User.where.not(id: current_user.id), :id, :email) %>
-  <br />
+  <%= form_for(@task,  html: {class: "form-group"}) do |f| %>
+    <%= f.label "Describe the task"%>
+    <%= f.text_field :comments, id: "task-comments", class: "form-control" %>
+    <br />
+    <%= f.label "Time in minutes" %>
+    <%= f.text_field :time, class: "form-control" %>
+    <%= f.label "Project" %>
+    <%= f.collection_select :project_id, Project.order(:name), :id, :name,
+        {prompt: "Select a project"}, {class: "form-control"} %>
+    <br />
+    <%= f.grouped_collection_select(:subproject_id, Project.order(:name), :subprojects, :name,
+        :id, :name, {prompt: "Select a subtask" },{class: "form-control"}) %>
+  <br / />
+    <%= f.label "Date" %>
+    <%= f.date_select :day,  {class: "form-control"}%>
 
-  <%= f.submit "Edit Task", class: 'btn btn-primary' %>
+    <br  />
+    <%= f.label "Collaborators" %>
+    <ul class="list-group collaborators">
+      <%= f.collection_check_boxes(:user_ids, User.where.not(id: current_user.id), :id, :email_or_user_name) do |box| %>
+      <li class="list-group-item"> <%= box.check_box + box.text%> </li>
 
-<% end %>
+      <% end %>
+      </ul>
+    <br />
 
-<% if current_user.admin? %>
-  <div class="alert-danger">
-    <h2>Danger Zone:</h2>
-    <%= button_to "Delete Task", task_path(@task), data: { confirm: "Are you sure?" }, method: :delete %>
-  </div>
-<% end %>
+    <%= f.submit "Edit Task", class: 'btn btn-primary' %>
+
+  <% end %>
+
+  <% if current_user.admin? %>
+    <div class="alert-danger">
+      <h2>Danger Zone:</h2>
+      <%= button_to "Delete Task", task_path(@task), data: { confirm: "Are you sure?" }, method: :delete %>
+    </div>
+  <% end %>
+
+<br />
+</div>
