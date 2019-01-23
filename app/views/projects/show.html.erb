@@ -16,14 +16,15 @@
       <div class="row">
         <div class="col-xs">Precentage Complete:</div>
         <div class="col-xl">
+          <div class="progress">
           <div class="progress-bar progress-bar-success"
               role="progressbar"
-              aria-value-now="<%= @project.precentage_complete %>"
+              aria-value-now="<%= project_complete_status %>"
               aria-valuemin="0" aria-valuemax="100"
-              style="width:<%= @project.precentage_complete %>%">
-              <span><%= @project.precentage_complete %>% completed</span>
+              style="width:<%= project_complete_status %>%">
+              <span><%= project_complete_status %>% completed</span>
         </div>
-
+</div>
       </div>
 
 
@@ -61,7 +62,10 @@
         <td>  <%= tsk.comments %>  </td>
         <td><%= tsk.time %></td>
         <% if current_user.admin %>
-        <td><%= User.find_by(id: tsk.user_ids).email %></td>
+        <%= tsk.user_ids %>
+        <td><% User.where(id: tsk.user_ids).each do |usr| %>
+        <%=  usr.email_or_user_name %>
+        <% end  %></td>
         <td><%= link_to "Edit", edit_task_path(tsk) %></td>
         <% end %>
       </tr>

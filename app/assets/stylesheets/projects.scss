@@ -1,11 +1,11 @@
-@import 'scrollbar';
+@import "scrollbar";
+@import "colors";
 
 .sub-task {
   max-height: 200px;
   overflow-y: scroll;
   overflow-x: hidden;
   direction: rtl;
-
 }
 
 .sub-task::-webkit-scrollbar-track {
@@ -16,4 +16,26 @@
 }
 .sub-task::-webkit-scrollbar-thumb {
   @extend %scroll-thumb;
+}
+
+.progress-bar {
+  span {
+    color: $grey;
+  }
+}
+
+.progress-bar-success {
+  color: $grey;
+  font-size: 1rem;
+  border-radius: 8px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-image: -webkit-gradient(
+    linear,
+    left,
+    right,
+    from(#5ee7df),
+    to(#b490ca)
+  );
+  background-image: webkit-linear-gradient(left, #5ee7df 0%, #b490ca 100%);
+  background-image: linear-gradient(to right, #5ee7df 0%, #b490ca 100%);
 }
