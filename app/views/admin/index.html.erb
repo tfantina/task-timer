@@ -1,2 +1,4 @@
 <% provide(:title, "Admin panel") %>
 <h1>Welcome Admin</h1>
+
+<%= link_to "export tasks", tasks_path(format: 'xlsx') %>

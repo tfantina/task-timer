@@ -33,9 +33,17 @@
         <li class="nav-item">
           <%= link_to "My Tasks", tasks_path, class: 'nav-link' %>
         </li>
-        <li class="nav-item">
-          <%= link_to "All Projects", projects_path, class: 'nav-link' %>
+        <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown"
+                          role="button" data-toggle="dropdown" aria-haspopup="true"
+                          aria-expanded="false">Projects</a>
+            <div class="dropdown-menu" aria-laelledby="navbarDropdown">
+                <%= link_to "All Projects", projects_path, class: 'dropdown-item' %>
+                <%= link_to "New Project", new_project_path, class: 'dropdown-item' %>
+                <%= link_to "New Subtask", new_subproject_path, class: 'dropdown-item' %>
+              </div>
         </li>
+  
 
         <% if current_user.admin? %>
          <li class="nav-item">

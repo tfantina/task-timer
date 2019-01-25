@@ -1,0 +1,8 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Tasks") do |sheet|
+sheet.add_row %w(comments project)
+
+@task_global.each do |tsk|
+  sheet.add_row [tsk.comments, tsk.project_id]
+  end
+  end 

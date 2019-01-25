@@ -14,10 +14,11 @@
  *= require_self
  *= require font-awesome
  */
- @import 'bootstrap';
- @import 'font-awesome';
- @import 'buttons';
- @import 'colors';
+@import "bootstrap";
+@import "font-awesome";
+@import "buttons";
+@import "colors";
+@import "tasks";
 
 body {
   min-height: 100vh;
@@ -25,12 +26,9 @@ body {
   margin: 0;
 }
 
-
 .page-contents {
   min-height: 100vh;
 }
-
-
 
 .hero {
   background-color: $purple;
@@ -43,13 +41,10 @@ body {
   color: $purple;
 }
 
-
-
 .jumbotron {
   margin-top: 20px;
   background-color: #ffffffc2;
 }
-
 
 p {
   .alert {
@@ -63,6 +58,19 @@ p {
   }
 }
 
+.turbolinks-progress-bar {
+  height: 3px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-image: -webkit-gradient(
+    linear,
+    left,
+    right,
+    from(#5ee7df),
+    to(#b490ca)
+  );
+  background-image: webkit-linear-gradient(left, #5ee7df 0%, #b490ca 100%);
+  background-image: linear-gradient(to right, #5ee7df 0%, #b490ca 100%);
+}
 
 .footer {
   position: absolute;
