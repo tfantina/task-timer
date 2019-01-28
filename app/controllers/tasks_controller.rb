@@ -13,7 +13,9 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.xlsx
+      format.xlsx {
+        response.headers['Content-Disposition'] = 'attachment; filename="magictrackr_export_dump.xlsx"'
+      }
     end
   end
 
