@@ -1,8 +1,12 @@
 wb = xlsx_package.workbook
-wb.add_worksheet(name: "Tasks") do |sheet|
-sheet.add_row %w(comments project)
-
-@task_global.each do |tsk|
-  sheet.add_row [tsk.comments, tsk.project_id]
+@projects.each do |proj|
+  wb.add_worksheet(name: proj.name) do |sheet|
+    sheet.add_row %w(Subproject Comments Time Date Employee)
+    @task_global.where(project_id: proj.id).each do |tsk|
+      @usr = User.where(id: tsk.user_ids).each do |usr|
+        sheet.add_row [tsk.project.subprojects.name, tsk.comments, tsk.time, tsk.day,
+          usr.email_or_user_name]
+        end
+      end
+    end
   end
-  end 

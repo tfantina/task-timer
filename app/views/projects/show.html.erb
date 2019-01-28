@@ -62,7 +62,7 @@
         <td>  <%= tsk.comments %>  </td>
         <td><%= tsk.time %></td>
         <% if current_user.admin %>
-   
+
         <td><% User.where(id: tsk.user_ids).each do |usr| %>
         <%=  usr.email_or_user_name %>
         <% end  %></td>
