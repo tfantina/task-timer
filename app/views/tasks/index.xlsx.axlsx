@@ -1,6 +1,6 @@
 wb = xlsx_package.workbook
 @projects.each do |proj|
-  wb.add_worksheet(name: proj.name) do |sheet|
+  wb.add_worksheet(name: proj.name_length) do |sheet|
     sheet.add_row %w(Subproject Comments Time Date Employee)
     @task_global.where(project_id: proj.id).each do |tsk|
       @usr = User.where(id: tsk.user_ids).each do |usr|

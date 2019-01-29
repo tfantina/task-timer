@@ -5,5 +5,11 @@ class Project < ApplicationRecord
 
   validates :name, uniqueness: true, presence: true, length: {minimum: 2}
 
+  def name_length
+    if name.length > 30
+      name.truncate(30)
+    end
+  end
+
 
 end
