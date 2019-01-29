@@ -5,7 +5,7 @@ wb = xlsx_package.workbook
     @task_global.where(project_id: proj.id).each do |tsk|
       @usr = User.where(id: tsk.user_ids).each do |usr|
 
-        sheet.add_row [Subproject.find_by(id: tsk.subproject_id).name, tsk.comments, tsk.time, tsk.day,
+        sheet.add_row [Subproject.try(:find_by, id: tsk.subproject_id).name, tsk.comments, tsk.time, tsk.day,
           usr.email_or_user_name]
         end
       end
