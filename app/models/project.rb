@@ -8,6 +8,8 @@ class Project < ApplicationRecord
   def name_length
     if name.length > 30
       name.truncate(30)
+    else
+      name
     end
   end
 

@@ -11,6 +11,7 @@ class TasksController < ApplicationController
     @projects = Project.all
     @task_global = Task.all
 
+
     respond_to do |format|
       format.html
       format.xlsx {
