@@ -15,6 +15,7 @@ class TasksController < ApplicationController
       format.html
       format.xlsx {
         response.headers['Content-Disposition'] = 'attachment; filename="magictrackr_export_dump.xlsx"'
+        #redirect_to admin_index_path
       }
     end
   end
