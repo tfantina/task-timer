@@ -16,6 +16,11 @@
             <th>
               Edit:
               </th>
+              <% if current_user.admin? %>
+              <th>
+                Subprojects associated:
+                </th>
+              <% end %>
       </tr>
       </thead>
 
@@ -26,6 +31,11 @@
         <td><%= p.start %></td>
         <td><%= p.tasks.count %></td>
         <td><%= link_to "edit", edit_project_path(p)%></td>
+        <td><% Subproject.where(id: p.subproject_ids).each do |subs| %>
+              <li><%= subs.name %> | <%= subs.id %></li>
+              <% end %>
+
+        </td>
       </tr>
       <% end %>
         </tbody>

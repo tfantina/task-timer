@@ -14,6 +14,7 @@
 <%= f.label "Included subprojects" %>
 <br />
 <ul class="list-group sub-task">
+
   <%= f.collection_check_boxes(:subproject_ids, Subproject.order(:name), :id,
                               :name, {class: "form-control"}) do |box| %>
   <li class="list-group-item">
