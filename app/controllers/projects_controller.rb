@@ -38,7 +38,7 @@
       flash[:success] = "Project updated"
       redirect_to projects_path
     else
-      flash[:error] = "Project nod updated"
+      flash[:error] = "Project not updated"
       render 'edit'
     end
   end

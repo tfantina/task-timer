@@ -13,5 +13,9 @@ class Project < ApplicationRecord
     end
   end
 
+  def calculate_time(project)
+    UserTask.where(task_ids: project.tasks.ids)
+  end
+
 
 end

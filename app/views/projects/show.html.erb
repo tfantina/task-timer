@@ -10,7 +10,9 @@
     <div class="row">
       <div class="col-xs">Total time:</div>
       <div class="col-xl">
-        <%= pluralize(@project.tasks.sum(:time), "minute")%>
+
+        <%= pluralize(project_time_spent, "minute") %>
+
       </div>
       </div>
       <div class="row">
