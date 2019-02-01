@@ -20,6 +20,7 @@ Enter your tasks for the day:
 </div>
 </div>
 </div>
+<div class="shove">
 <div class="row">
 
 
@@ -45,9 +46,8 @@ Enter your tasks for the day:
       </tr>
       </thead>
 
-  <div id="current-tasks">
     <%= render partial: 'show_list', locals: {tasks: @tasks, projects: @projects} %>
-  </div>
+
 
 </table>
 
@@ -56,5 +56,5 @@ Enter your tasks for the day:
 <%= will_paginate(@tasks, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
 </div>
 </div>
-
+</div>
 </div>

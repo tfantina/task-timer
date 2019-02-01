@@ -6,7 +6,16 @@
 @import "colors";
 
 #new-task-form {
-  display: none;
+  height: 0px;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, height 0.5s;
+  -webkit-transition: opacity 0.5s, height 0.2s;
+}
+
+.shove {
+  position: relative;
+  transition: position 5s;
 }
 
 .current-tasks {
