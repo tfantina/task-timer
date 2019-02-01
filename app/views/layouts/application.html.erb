@@ -2,7 +2,7 @@
 <html>
 <head>
   <title><%= yield(:title)%> MagicTrackr</title>
-
+  <meta http-equiv="x-ua-compatible" content="IE-edge"  />
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -43,7 +43,7 @@
                 <%= link_to "New Subtask", new_subproject_path, class: 'dropdown-item' %>
               </div>
         </li>
-  
+
 
         <% if current_user.admin? %>
          <li class="nav-item">
