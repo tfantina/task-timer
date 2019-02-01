@@ -1,5 +1,5 @@
 function showForm() {
-  const btn = document.getElementById("new-task-form");
+  var btn = document.getElementById("new-task-form");
   btn.style.height == "100%"
     ? ((btn.style.height = "0px"), (btn.style.opacity = "0"))
     : ((btn.style.height = "100%"), (btn.style.opacity = "1"));
