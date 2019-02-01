@@ -39,7 +39,7 @@ class TasksController < ApplicationController
         current_user.tasks << @task
         @tasks = current_user.tasks
         format.js {flash.now[:notice] = "Task added"}
-        redirect_to :action => 'new'
+        #redirect_to :action => 'new'
 
       else
         flash.now[:danger] = "Task not added"
