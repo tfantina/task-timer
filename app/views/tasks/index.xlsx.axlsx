@@ -4,9 +4,10 @@ wb = xlsx_package.workbook
     sheet.add_row %w(Subproject Comments Time Date Employee)
     @task_global.where(project_id: proj.id).each do |tsk|
       @usr = User.where(id: tsk.user_ids).each do |usr|
-      @subproj = Subproject.find_by(id: tsk.subproject_id);
-        sheet.add_row [@subproj.name, tsk.comments, tsk.time, tsk.day,
+      @subproj = Subproject.where(id: tsk.subproject_id).each do |subproj|
+        sheet.add_row [subproj.name, tsk.comments, tsk.time, tsk.day,
           usr.email_or_user_name]
+        end
         end
       end
     end
