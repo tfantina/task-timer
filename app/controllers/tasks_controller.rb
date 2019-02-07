@@ -8,8 +8,8 @@ class TasksController < ApplicationController
     #@tasks = User.where(id: current_user.id).tasks
     @tasks = current_user.tasks.paginate(page: params[:page], :per_page => 20).order(day: :desc)
     #@tasks = Task.where(user_id: current_user.id).paginate(                  #  page: params[:page], :per_page => 5).order(day: :desc)
-    @projects = Project.all
-    @task_global = Task.all
+    @projects = Project.all.order(name: :asc)
+    @task_global = Task.all.order(day: :desc)
 
 
     respond_to do |format|

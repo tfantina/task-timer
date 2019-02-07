@@ -1,4 +1,13 @@
 wb = xlsx_package.workbook
+wb.add_worksheet(name: "Projects") do |sheet|
+count = 1;
+
+  @projects.each do |proj|
+    sheet.add_row [proj.name]
+    sheet.add_hyperlink location: "'" + proj.name + "'!A1", ref: 'A' + count.to_s, target: :sheet
+    count = count + 1
+  end
+end
 @projects.each do |proj|
   wb.add_worksheet(name: proj.name_length) do |sheet|
     sheet.add_row %w(Subproject Comments Time Date Employee)
