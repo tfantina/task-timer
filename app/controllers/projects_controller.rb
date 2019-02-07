@@ -1,6 +1,7 @@
  class ProjectsController < ApplicationController
   before_action :authenticate_user!
 
+
   def index
     @projects = Project.all.order(name: :asc)
   end

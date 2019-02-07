@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
  has_many :user_tasks
  has_many :tasks, through: :user_tasks
+ belongs_to :teams
 
 
  def email_or_user_name
