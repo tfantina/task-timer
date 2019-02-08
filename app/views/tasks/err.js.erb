@@ -1,6 +1,6 @@
 if(!document.getElementById('tsk-err')) {
   $("#new-task-form").append(
-    "<div class='alert alert-danger' id='tsk-err'><%= flash[:danger] %></div>")
+    "<div class='alert alert-danger' id='tsk-err'><%= flash[:danger] %><%= j render partial: 'layouts/errors', locals: {err: @task} %> </div>")
 } else {
-  $("#tsk-err").innerHTML("<%= flash[:danger] %>")
+  $("#tsk-err").innerHTML("<%= flash[:notice] %>")
 }

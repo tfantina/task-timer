@@ -1,5 +1,6 @@
 <%= form_for(@project, html: {class: "form-group"}) do |f| %>
-<%= render 'errors' %>
+<%= render partial: 'layouts/errors', locals: {err: @project} %>
+
 <%= f.label :name %>
 <%= f.text_field :name, id: "project-name", class: "form-control" %>
 <%= f.label :summary%>
