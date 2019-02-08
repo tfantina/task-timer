@@ -80,6 +80,19 @@
 .show > .btn-success.dropdown-toggle,
 .btn-success.active,
 .btn-success:active {
+  color: $grey;
+  @include btncolors($success-sea-ultradark, $success-sea);
+}
+
+.btn-success:not(:disabled):not(.disabled):active:focus,
+.btn-success:not(:disabled):not(.disabled).active:focus,
+.show > .btn-success.dropdown-toggle:focus {
+  @include btncolors($success-sea-ultradark, $success-sea);
+}
+
+.btn-success.disabled,
+.btn-success:disabled {
+  color: $grey;
   @include btncolors($success-sea-ultradark, $success-sea);
 }
 
