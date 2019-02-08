@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= yield(:title)%> MagicTrackr</title>
+
+  <title><%= (yield(:title).empty? ? "" : "#{yield(:title)} | " )%>MagicTrackr</title>
   <meta http-equiv="x-ua-compatible" content="IE-edge"  />
   <%= csrf_meta_tags %>
 
