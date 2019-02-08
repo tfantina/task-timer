@@ -10,7 +10,7 @@ class TasksController < ApplicationController
     #@tasks = Task.where(user_id: current_user.id).paginate(                  #  page: params[:page], :per_page => 5).order(day: :desc)
     @projects = Project.all.order(name: :asc)
     @task_global = Task.all.order(day: :desc)
-
+    @team = Team.where(id: current_user.team_id)
 
     respond_to do |format|
       format.html

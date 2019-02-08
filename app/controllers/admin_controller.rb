@@ -1,7 +1,7 @@
 class AdminController < ApplicationController
   before_action :user_is_admin?
   def index
-
+    
   end
 end
 

@@ -18,5 +18,11 @@ class User < ApplicationRecord
 end
 
 
+  def is_member(team)
+    if team_id == team.ids
+      return true
+    end
+  end
+
 
 end
