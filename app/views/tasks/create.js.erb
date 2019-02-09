@@ -9,5 +9,4 @@ $("#new-task-form").append(
   "<div class='alert alert-success' id='tsk-add'><%= flash[:notice]  %></div>")
 } else {
   $("#tsk-add").innerHTML("<%= flash[:notice] %>");
-  $("#tsk-add").append("<%= render errors %>");
 }
