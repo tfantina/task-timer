@@ -1,17 +1,14 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :correct_user, only: [:edit, :update]
-
+  helper_method :sort_column, :sort_direction
   def index
     @task = Task.new
-    #@usertsk = UserTask.where(user_id: current_user.id)
-    #@tasks = User.where(id: current_user.id).tasks
-    @tasks = current_user.tasks.paginate(page: params[:page], :per_page => 20).order(day: :desc)
-    #@tasks = Task.where(user_id: current_user.id).paginate(                  #  page: params[:page], :per_page => 5).order(day: :desc)
+    @tasks = current_user.tasks.paginate(page: params[:page], :per_page => 25).order(sort_column + " " + sort_direction)
     @projects = Project.all.order(name: :asc)
     @task_global = Task.all.order(day: :desc)
 
-
+    @user_list = User.where.not(id: current_user.id).order(name: :asc)
     respond_to do |format|
       format.html
       format.xlsx {
@@ -82,10 +79,18 @@ class TasksController < ApplicationController
   end
 
 
-    def correct_user
-        @task = Task.find_by(id: params[:id])
-        unless current_user.admin? or @task.user_ids.include? current_user.id
-          redirect_to tasks_path
-        end
+  def correct_user
+    @task = Task.find_by(id: params[:id])
+    unless current_user.admin? or @task.user_ids.include? current_user.id
+      redirect_to tasks_path
+    end
+  end
+
+  def sort_column
+    %w[day time project].include?(params[:sort]) ? params[:sort] : "day"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "DESC"
   end
 end

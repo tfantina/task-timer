@@ -25,26 +25,26 @@ Enter your tasks for the day:
 
 
 
-<table class="table table-hover" id="current-tasks">
-  <thead class="thead-dark">
-    <tr>
-      <th>
-        Date:
-        </th>
+  <table class="table table-hover" id="current-tasks">
+    <thead class="thead-dark">
+      <tr>
         <th>
-          Project:
+          <%= sorter "day", "Date:" %>
           </th>
           <th>
-          Comments:
+             Project:
             </th>
             <th>
-              Total Time (minutes):
+            Comments:
               </th>
               <th>
-                Edit:
+              <%= sorter "time", "Total Time (minutes):"%>
                 </th>
-      </tr>
-      </thead>
+                <th>
+                 Edit:
+                  </th>
+        </tr>
+        </thead>
 
     <%= render partial: 'show_list', locals: {tasks: @tasks, projects: @projects} %>
 

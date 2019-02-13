@@ -17,10 +17,13 @@
   <br  />
   <%= f.label "Collaborators" %>
   <ul class="list-group collaborators">
-    <%= f.collection_check_boxes(:user_ids, User.where.not(id: current_user.id), :id, :email_or_user_name) do |box| %>
-    <label class="checkbox-inline">
-        <%= box.check_box + box.text %>
-        </label>
+    <%= f.collection_check_boxes(:user_ids, @user_list, :id, :email_or_user_name) do |box| %>
+
+          <label class="checkbox-inline">
+        <%= box.text %>
+        <%= box.check_box %>
+    </label>
+
 
 
     <% end %>
