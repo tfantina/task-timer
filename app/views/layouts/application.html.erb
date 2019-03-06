@@ -69,8 +69,16 @@
     </div>
   </nav>
 
+ <% devise_bootstrap_mapping = {'alert' => 'danger', 'notice' => 'info'} %>
+
   <% flash.each do |message_type, message| %>
-  <div class="alert alert-<%= message_type %>"><%= message %> </div>
+   <% if devise_bootstrap_mapping.keys.include? message_type %>
+     <% message_type = devise_bootstrap_mapping[message_type] %>
+     <% end %>
+  <div class="alert alert-<%= message_type %>">
+    <a href="#" data-dismiss="alert" class="close">x</a>
+      <%= message %>
+  </div>
   <% end %>
 
 
