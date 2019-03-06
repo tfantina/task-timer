@@ -4,7 +4,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-ruby '2.4.1'
+ruby '2.6.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'bootstrap', '~> 4.1.3'
+gem 'bootstrap', '~> 4.3.1'
 gem 'will_paginate', '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'font-awesome-rails'
