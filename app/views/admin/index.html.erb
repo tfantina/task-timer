@@ -1,4 +1,14 @@
 <% provide(:title, "Admin panel") %>
 <h1>Welcome Admin</h1>
 
+Select user to see stats:
+<ul>
+  <% @users.each do |usr| %>
+
+  <li>
+     <%= usr.email %>
+    </li>
+  <% end %>
+  </ul>
+
 <%= link_to "export tasks", tasks_path(format: 'xlsx'), data: {turbolinks: false} %>
