@@ -7,7 +7,10 @@
   <td><strong> <%= projects.find_by(id: tsk.project_id).name%></strong></td>
   <td>  <%= tsk.comments %>  </td>
   <td><%= tsk.time %></td>
-  <td><%= link_to "Edit", edit_task_path(tsk) %></td>
+  <td><%= link_to edit_task_path(tsk) do %>
+        <%= fa_icon "edit solid 2x", type: :solid%>
+      <% end %>
+</td>
 </tr>
 <% end %>
   </tbody>
