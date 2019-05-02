@@ -3,7 +3,10 @@ class AdminController < ApplicationController
       @users = User.order(name: :asc).all
   end
 
-  def user_projects
-    @tasks = Task.where(user_id: id)
+  def user_tasks
+    @current_usr_task = UserTask.where(user_id: params[:id])
+    @tasks = Task.where(id: @current_usr_task.ids)
+    @projects = Project.all.order(name: :asc)
   end
+
 end

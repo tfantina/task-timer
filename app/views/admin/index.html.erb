@@ -6,7 +6,7 @@ Select user to see stats:
   <% @users.each do |usr| %>
 
   <li>
-     <%= usr.email %>
+     <%= link_to usr.email_or_user_name, admin_user_tasks_path(usr) %>
     </li>
   <% end %>
   </ul>
