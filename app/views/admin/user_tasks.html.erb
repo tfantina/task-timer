@@ -1,0 +1,7 @@
+<h1>Hi</h1>
+<% @tasks.each do |tsk| %>
+  <li>
+    <%= tsk.comments %>
+    </li>
+<% end %>
+<%= render partial: 'tasks/show_list', locals: {tasks: @tasks, projects: @projects} %>
