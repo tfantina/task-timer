@@ -1,7 +1,34 @@
-<h1>Hi</h1>
-<% @tasks.each do |tsk| %>
-  <li>
-    <%= tsk.comments %>
-    </li>
+
+<h1><%= @user.email_or_user_name %></h1>
+<% if @tasks.present?%>
+
+
+<table class="table table-hover" id="current-tasks">
+  <thead class="thead-dark">
+    <tr>
+      <th>
+        <%= sorter "day", "Date:" %>
+        </th>
+        <th>
+           Project:
+          </th>
+          <th>
+          Comments:
+            </th>
+            <th>
+            <%= sorter "time", "Total Time (minutes):"%>
+              </th>
+              <th>
+               Edit:
+                </th>
+      </tr>
+      </thead>
+
+  <%= render partial: 'tasks/show_list', locals: {tasks: @tasks, projects: @projects} %>
+
+
+</table>
+
+<% else  %>
+<%= @user.email_or_user_name %> has no tasks.
 <% end %>
-<%= render partial: 'tasks/show_list', locals: {tasks: @tasks, projects: @projects} %>
