@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   helper_method :sort_column, :sort_direction
   def index
     @task = Task.new
-    @tasks = current_user.tasks.paginate(page: params[:page], :per_page => 2).order(sort_column + " " + sort_direction)
+    @tasks = current_user.tasks.paginate(page: params[:page], :per_page => 25).order(sort_column + " " + sort_direction)
     @projects = Project.all.order(name: :asc)
     @task_global = Task.all.order(day: :desc)
 
