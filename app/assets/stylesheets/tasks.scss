@@ -42,8 +42,22 @@
   border-radius: 5px;
 }
 
-.thead-dark a:link{
-  color: rgb(255, 255, 255);
+.thead-dark > a:link {
+  color: $white;
+}
+
+.thead-dark th > a:visited {
+  color: $white;
+}
+
+.thread-dark a:hover {
+  color: $light-grey;
+}
+
+.pagination > ul{
+  padding-top: 10px;
+  padding-bottom: 35px;
+  margin: 20px;
 }
 
 %scroll-track {

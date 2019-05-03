@@ -6,8 +6,7 @@ class AdminController < ApplicationController
 
   def user_tasks
     @user = User.find_by(id: params[:id])
-    @current_usr_task = UserTask.where(user_id: params[:id])
-    @tasks = Task.where(id: @current_usr_task.ids)
+    @tasks = @user.tasks.paginate(page: params[:page], :per_page => 25).order(sort_column + " " + sort_direction)
     @projects = Project.all.order(name: :asc)
   end
 
