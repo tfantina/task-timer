@@ -38,7 +38,7 @@ class TasksController < ApplicationController
         @tasks = current_user.tasks
         format.js {flash.now[:notice] = "Task added"}
         #redirect_to :action => 'new'
-
+         @user_list = User.where.not(id: current_user.id).order(name: :asc)
       else
         flash.now[:danger] = "Task not added"
         format.html { render 'new'}

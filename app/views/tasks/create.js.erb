@@ -1,6 +1,9 @@
+$("#new_task").reset();
+//https://stackoverflow.com/questions/10633605/clear-form-values-after-submission-ajax
 
 
-$("#new_task_form").html('<%= j render("new", locals: {usr_list: @user_list }) %>');
+$(".new_task_form").html('<%= j render partial: "tasks/new" %>');
+
 
 $("#active-tasks").prepend('<%= j render "new_added" %>');
 
