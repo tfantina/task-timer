@@ -1,6 +1,6 @@
 
 
-$("#task-comments").val('');
+$("#new_task_form").html('<%= j render("new", locals: {usr_list: @user_list }) %>');
 
 $("#active-tasks").prepend('<%= j render "new_added" %>');
 

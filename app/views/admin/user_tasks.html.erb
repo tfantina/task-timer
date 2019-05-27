@@ -1,7 +1,9 @@
-
+<div class="container">
 <h1><%= @user.email_or_user_name %></h1>
-<% if @tasks.present?%>
 
+<% if @tasks.present?%>
+<div class="shove">
+<div class="row">
 
 <table class="table table-hover" id="current-tasks">
   <thead class="thead-dark">
@@ -28,7 +30,9 @@
 
 
 </table>
-
+</div>
+</div>
 <% else  %>
 <%= @user.email_or_user_name %> has no tasks.
 <% end %>
+</div>
