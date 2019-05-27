@@ -33,3 +33,13 @@ end
     subproject_ids: Subproject.pluck(:id).sample(rand(3...8))
   )
 end
+
+10.times do 
+  Task.create!(
+    comments: Faker::Book,
+    project_id: Faker::Number.between(0, 7),
+    time: Faker::Number.between(15,420),
+    day: Faker::Time.between(2.days.ago, Date.today, :day),
+   subproject_id: Faker::Number.between(0,9),
+     )
+   end
