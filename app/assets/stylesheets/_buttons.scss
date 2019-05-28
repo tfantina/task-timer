@@ -49,39 +49,41 @@
 }
 
 .btn-success {
-  background-color: $success-sea;
+  color: $white;
+    background-color: $success-sea;
   border-color: $success-sea;
-  color: $grey;
+
 }
 
 .btn-success:hover,
 .btn-success:focus,
 .btn-success.focus,
 .btn-success.show,
-.open .dropdown-toggle.btn-success {
-  color: $grey;
-  @include btncolors($success-sea-dark, $success-sea);
+.open .dropdown-toggle.btn-primary {
+ @include btncolors($success-sea-dark, $success-sea);
 }
+
 .btn-success:focus,
 .btn-success.focus {
   box-shadow: 0 0 0 0.2rem $success-sea-lite;
-  color: $grey;
 }
 
 .btn-success:not(:disabled):not(.disabled):active:focus,
 .btn-success:not(:disabled):not(.disabled).active:focus,
 .show > .btn-success.dropdown-toggle:focus {
   box-shadow: 0 0 0 3px $success-sea-lite;
-  color: $grey;
 }
 
 .btn-success:not(:disabled):not(.disabled):active,
 .btn-success:not(:disabled):not(.disabled).active,
+.btn-success:disabled,
 .show > .btn-success.dropdown-toggle,
 .btn-success.active,
 .btn-success:active {
   @include btncolors($success-sea-ultradark, $success-sea);
 }
+
+
 
 .btn-secondary {
   background-color: $secondary-grey;

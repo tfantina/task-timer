@@ -4,5 +4,8 @@
   <td><strong> <%= Project.find_by(id: @task.project_id).name%></strong></td>
   <td>  <%= @task.comments %>  </td>
   <td><%= @task.time %></td>
-  <td><%= link_to "Edit", edit_task_path(@task) %></td>
+  <td><%= link_to edit_task_path(tsk) do %>
+        <%= fa_icon "edit solid 2x", type: :solid%>
+      <% end %>
+      </td>
 </tr>

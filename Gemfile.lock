@@ -93,6 +93,7 @@ GEM
       responders
       warden (~> 1.2.3)
     erubis (2.7.0)
+    evil_icons (1.10.1)
     execjs (2.7.0)
     factory_bot (4.11.1)
       activesupport (>= 3.0.0)
@@ -299,6 +300,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   devise
+  evil_icons
   factory_bot_rails (~> 4.0)
   faker
   font-awesome-rails

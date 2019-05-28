@@ -1,4 +1,5 @@
 <%= form_for(@task, method: :post, remote: true, html: {class: "form-group"}) do |f| %>
+<%= evil_icons_sprite %>
   <%= f.label "Describe the task"%>
   <%= f.text_field :comments, id: "task-comments", class: "form-control" %>
   <br />
@@ -28,5 +29,5 @@
 
     <% end %>
     </ul>
-  <%= f.button "Add Task", class: 'btn btn-success', data: {disable_with: "Adding"} %>
+  <%= f.button "Add Task", class: 'btn btn-success', id: 'add-tsk-btn', data: {disable_with: "#{h evil_icon 'ei-spinner-3', size: :s}".html_safe } %>
 <% end %>
