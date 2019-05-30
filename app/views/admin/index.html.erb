@@ -1,4 +1,6 @@
 <% provide(:title, "Admin panel") %>
+<div class="container">
+
 <h1>Welcome Admin</h1>
 
 Select user to see stats:
@@ -11,4 +13,5 @@ Select user to see stats:
   <% end %>
   </ul>
 
-<%= link_to "export tasks", tasks_path(format: 'xlsx'), data: {turbolinks: false} %>
+<%= button_to "export tasks", tasks_path(format: 'xlsx'), data: {turbolinks: false}, class: "btn btn-primary" %>
+</div>
