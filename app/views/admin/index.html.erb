@@ -13,5 +13,5 @@ Select user to see stats:
   <% end %>
   </ul>
 
-<%= button_to "export tasks", tasks_path(format: 'xlsx'), data: {turbolinks: false}, class: "btn btn-primary" %>
+<%= link_to "export tasks", tasks_path(format: 'xlsx'), data: {turbolinks: false}, class: "btn btn-primary" %>
 </div>
