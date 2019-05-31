@@ -29,8 +29,9 @@ body, html {
 }
 
 .body-content {
+  --size: calc(100vh + 2004px);
   display: grid;
-  grid-template-rows: auto, 44px;
+  grid-template-rows: minmax(calc(100vh - 44px), auto) 44px;
 }
 
 .content {
@@ -88,3 +89,4 @@ p {
   color: $light-grey;
   background-color: $secondary-grey-ultradark;
 }
+
