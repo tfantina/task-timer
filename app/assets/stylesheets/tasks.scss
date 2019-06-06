@@ -82,9 +82,12 @@
 .page-link {
   color: $primary-purple;
 }
+.page-link:hover {
+  color: $primary-purple;
+}
 .page-item.active .page-link {
   z-index: 1;
-  color: $grey;
+  color: $white;
   background-color: $primary-purple;
   border-color: $primary-purple-dark;
 }

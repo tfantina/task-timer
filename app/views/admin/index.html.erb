@@ -1,14 +1,17 @@
 <% provide(:title, "Admin panel") %>
+<div class="container">
+
 <h1>Welcome Admin</h1>
 
 Select user to see stats:
-<ul class="usr-list">
+<ul class="list-group">
   <% @users.each do |usr| %>
 
-  <li>
+  <li class="list-group-item  list-group-item-action">
      <%= link_to usr.email_or_user_name, admin_user_tasks_path(usr) %>
     </li>
   <% end %>
   </ul>
 
-<%= link_to "export tasks", tasks_path(format: 'xlsx'), data: {turbolinks: false} %>
+<%= link_to "export tasks", tasks_path(format: 'xlsx'), data: {turbolinks: false}, class: "btn btn-primary" %>
+</div>
