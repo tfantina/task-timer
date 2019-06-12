@@ -14,7 +14,7 @@
             <div class="hero-btns">
               <div class="hero-btns-content">
   <span>
-                <%= link_to "Learn More", "#about", class: "btn btn-success" %>
+                <%= link_to "Learn More", root_path(anchor: "about"), class: "btn btn-success" %>
 </span>
 <span>
                 <%= link_to "Beta Login", new_user_session_path %>
@@ -146,7 +146,8 @@
   </div>
   </div>
 
-  <div class="row row-70" name="about">
+  <div class="row row-70">
+    <a name="about"></a>
     <%= render "about" %>
   </div>
 
