@@ -35,6 +35,7 @@ class TaskTest < ActiveSupport::TestCase
 
   test "task associates with users" do
     assert_difference 'UserTask.count', 1 do
+      @task.user_ids = [1]
       @task.save
     end
   end

@@ -16,7 +16,9 @@ class UserAddsTasksTest < ActionDispatch::IntegrationTest
     test "user can add a task" do
         visit tasks_path
         click_on "New Task"
+        wait_for_ajax
         fill_in "task[comments]", with: "Sample Task"
+        
         click_button "Add Task"
 
         assert page.has_content? "Simple Task"

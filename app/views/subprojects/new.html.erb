@@ -1,3 +1,4 @@
+<div class="container border  new-task-form">
 <%= form_for(@subproject, method: :post, remote: true, html: {class: "form-group"}) do |f| %>
   <%= f.label "Name subproject"%>
   <%= f.text_field :name, class: "form-control" %>
@@ -10,3 +11,4 @@
 
   <%= f.submit "Add Subproject", class: 'btn btn-success' %>
 <% end %>
+</div>

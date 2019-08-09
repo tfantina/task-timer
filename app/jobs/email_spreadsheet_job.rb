@@ -2,6 +2,6 @@ class EmailSpreadsheetJob < ApplicationJob
   queue_as :default
 
   def perform(*args)
-    # Do something later
+    sen
   end
 end

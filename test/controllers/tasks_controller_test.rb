@@ -17,10 +17,9 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
 
    test "user can add task" do
      get tasks_path
-     assert_template layout: "tasks/index", partial: "_new"
-     assert_select 'New Task'
+     assert page.has_content? 'New Task'
+     click_button 'New Task'
      assert true
    end
 
-   test "user_admin"
 end

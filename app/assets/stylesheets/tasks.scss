@@ -42,11 +42,11 @@
   border-radius: 5px;
 }
 
-.thead-dark > a:link {
+.thead-dark a:link {
   color: $white;
 }
 
-.thead-dark th > a:visited {
+.thead-dark th a:visited {
   color: $white;
 }
 
@@ -54,7 +54,7 @@
   color: $light-grey;
 }
 
-.pagination > ul{
+.pagination > ul {
   padding-top: 10px;
   padding-bottom: 35px;
   margin: 20px;
@@ -91,7 +91,6 @@
   background-color: $primary-purple;
   border-color: $primary-purple-dark;
 }
-
 
 #add-tsk-btn {
   height: 46px;

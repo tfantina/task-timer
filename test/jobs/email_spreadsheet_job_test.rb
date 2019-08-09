@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class EmailSpreadsheetJobTest < ActiveJob::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "email sends" do
+    EmailSpreadsheetJob.preform_now
+  end
+
 end
