@@ -1,7 +1,11 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+ 
+  after_create :create_tenant
+
+  
+ devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
  has_many :user_tasks
@@ -16,6 +20,11 @@ class User < ApplicationRecord
   end
 end
 
+
+private 
+  def create_tenant 
+    Apartment::Tenant.create(team)
+  end 
 
 
 end
