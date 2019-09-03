@@ -5,15 +5,20 @@ class User::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+   def new
+     @user = User.new
+     @team = @user.teams.build
+   end
 
   # POST /resource
    def create
+
      ActiveRecord::Base.transaction do 
       @team = Team.find_or_create_by(name: team_params)
-
+      Apartment::Tenant.create(@team.name)
+      Apartment::Tenant.switch!(@team.name)
+      @team.save
+      redirect_to root_url(:subdomain "#{Apartment::Tenant.current}")
      end
    end
 

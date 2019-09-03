@@ -9,13 +9,16 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+  
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :team %><br />
-    <%= f.text_field :team, autofocus: true, autocomplete: "email" %>
+  <%= fields_for :team do |t|%>
+    <%= t.label :name %><br />
+    <%= t.text_field :name, autofocus: true, autocomplete: "email" %>
+    <% end %>
   </div>
 
   <div class="field">
